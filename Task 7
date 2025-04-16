@@ -1,0 +1,39 @@
+class Animal:
+    count = 0
+
+    def __init__(self, animal_type = None, color = None):
+        self.animal_type = animal_type
+        self.color = color
+        Animal.count += 1
+    def get_count(self):
+        Animal.count
+
+
+class Cat(Animal):
+    def __init__(self, animal_type, color):
+        Animal.__init__(self,'Cat', None)
+    def voice (self, animal_type, color):
+        print(color + ' cat says meow')
+
+class Dog(Animal):
+    def __init__(self, animal_type, color):
+        Animal.__init__(self,'Dog', None)
+    def voice (self, animal_type, color):
+        print(color + ' ' + animal_type + ' says gav')
+
+class Hamster(Animal):
+    def __init__(self, animal_type, color):
+        Animal.__init__(self,'Hamster', None)
+    def voice (self, animal_type, color):
+        print(color + ' hamster says rrrr')
+
+
+Barsik = Cat('','')
+Pyshok = Dog('','')
+Homyak = Hamster('','')
+
+
+print(Barsik.voice('cat', 'red'))
+print(Pyshok.voice('dog', 'black'))
+print(Homyak.voice('cat', 'orange'))
+print(Animal.count)
