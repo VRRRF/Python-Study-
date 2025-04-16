@@ -3,9 +3,10 @@ new_f = f.read()
 new_f = new_f[: : -1]
 f.close()
 # print(new_f)
-f = open('123.txt', 'w')
+f = open('321.txt', 'w+')
 f.write(str(new_f))
 f.close()
 f = open('123.txt', 'r')
-
+d = open('321.txt', 'r')
 print(f.read(5))
+print(d.read(5))
