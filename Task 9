@@ -1,0 +1,30 @@
+import threading
+import time
+import datetime
+
+
+def clock(interval):
+    i = 10
+    while i >= 0:
+        print(i)
+        time.sleep(interval)
+        i = i -1
+t = threading.Thread(target = clock, args=(1,))
+t.daemon = True
+
+def clock(interval):
+    i = 10
+    while i >= 0:
+        print(i)
+        time.sleep(interval)
+        i = i -1
+f = threading.Thread(target = clock, args=(1,))
+f.daemon = True
+
+
+t.start()
+f.start()
+t.join(10)
+print("The 1 end time is %s" % time.ctime())
+f.join(10)
+print("The 2 end time is %s" % time.ctime())
