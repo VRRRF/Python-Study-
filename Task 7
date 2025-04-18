@@ -1,12 +1,11 @@
 class Animal:
-    count = 0
+    NumCount = 0
 
     def __init__(self, animal_type = None, color = None):
         self.animal_type = animal_type
         self.color = color
-        Animal.count += 1
-    def get_count(self):
-        Animal.count
+    def __init__(self, animal_type, color):
+        Animal.NumCount = Animal.NumCount + 1
 
 
 class Cat(Animal):
@@ -32,8 +31,10 @@ Barsik = Cat('','')
 Pyshok = Dog('','')
 Homyak = Hamster('','')
 
+def printNumCount ():
+    print (Animal.NumCount)
 
 print(Barsik.voice('cat', 'red'))
 print(Pyshok.voice('dog', 'black'))
 print(Homyak.voice('cat', 'orange'))
-print(Animal.count)
+printNumCount()
